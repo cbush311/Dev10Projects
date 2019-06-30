@@ -1,0 +1,30 @@
+.Title {
+    text-align: center;
+    font-family: Verdana;
+}
+
+.pages {
+    text-decoration: underline;
+    color: blue;
+    float: left;
+    width: 75px;
+}
+
+.footline {
+    position: fixed;
+  left: 0;
+  bottom: 10;
+  width: 100%;
+  text-align: center;
+}
+
+.footer {
+    position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+
+
