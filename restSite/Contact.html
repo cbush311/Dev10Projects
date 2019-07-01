@@ -1,6 +1,70 @@
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
+        <style>
+
+            .contact {
+                margin: 0 auto;
+                width: 250px;   
+            }
+
+            .inq {
+                margin: 0 auto;
+                width: 300px;
+                padding-right: 120px;
+            }
+
+            .inq_adjust {
+                width: 130px;
+            }
+
+            .info {
+                margin: 0 auto;
+                width: 500px;
+                padding-left: 25px;
+            }
+
+            label textarea {
+                vertical-align: top;
+                padding-left: 10px;
+                
+            }
+
+            .area {
+                height: 150px;
+            }
+
+            .been {
+                margin: 0 auto;
+                width: 600px;
+                padding-right: .1px;;
+            }
+
+            .been_adjust {
+                width:300px;
+            }
+            .radio-inline {
+                display: inline;
+            }
+
+            .days {
+                margin: 0 auto;
+                width: 1000px;
+                padding-left: 470px;
+            }
+            
+            .submit {
+                margin: 0 auto;
+                width: 100px;
+            }
+
+            p#label, label#label {
+                font-weight: bold;
+            }
+
+
+
+        </style>
         <link rel="stylesheet" type="text/css" href="restaurantStyles.css">
 
         <title>Cobra's Cafe</title>
@@ -10,12 +74,46 @@
          <a class="pages" href="Menu.html">Menu</a>
          <a class="pages" href="Contact.html">Contact Us</a>
          <br>
-         <br>
          <hr />
          
     </head>
 
     <body>
+            <form class="contact">
+                <p id="label">Name: <input type="text" name="Name"></p>
+                <p id="label">Email: <input type="text" name="Email"></p>
+                <p id="label">Phone: <input type="text" name="Phone"></p>
+            </form>
+            <form class="inq">
+                <p id="label">Reason for Inquiry: <select name="Reasons" class="inq_adjust">
+                    <option value="Catering">Catering</option>
+                    <option value="Private Party">Private Party</option>
+                    <option value="Feedback">Feedback</option>
+                    <option value="Other">Other</option>
+                    </select>
+                </p>
+            </form>
+            <form class="info">
+                 <label id="label">Additional Information: <textarea class ="area"  type="text" name="Info"></textarea></label>
+            </form>
+            <form class="been">
+                    <label class="been_adjust" id="label">Have you been to the restaurant?&nbsp&nbsp&nbsp<input  type="radio" name="answer">No &nbsp&nbsp&nbsp&nbsp<input  type="radio" name="answer">Yes</label>                        
+
+            </form>
+            <form class="days">
+                <p id="label">Best days to contact you: <input type="checkbox" name="Monday" value="Monday"> M
+                <input type="checkbox" name="Tuesday" value="Tuesday"> T
+                <input type="checkbox" name="Wednesday" value="Wednesday"> W
+                <input type="checkbox" name="Thursday" value="Thursday"> Th
+                <input type="checkbox" name="Friday" value="Friday"> F  
+                </p>
+
+            </form>
+            <form class="submit">
+                <input type="submit"  value="Send Request">
+
+            </form>
+ 
         
 
     </body>

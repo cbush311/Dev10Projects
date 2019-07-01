@@ -7,7 +7,7 @@
     text-decoration: underline;
     color: blue;
     float: left;
-    width: 75px;
+    width: 100px;
 }
 
 .footline {
@@ -25,6 +25,16 @@
   width: 100%;
   text-align: center;
 }
+ .pages:visited {
+     color: firebrick;
+ }
 
+ .pages:hover {
+     font-weight: bold;
+ }
+
+ .pages:active {
+     text-decoration: none;
+ }
 
 
