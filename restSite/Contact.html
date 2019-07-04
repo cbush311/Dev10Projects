@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html lang="en-US">
+    <noscript>
+        <style type="text/css">
+            .emptySite
+            {
+                display: none;
+            }
+
+        </style>
+        <h1 style="text-align: center; color: firebrick; "><strong>THIS SITE IS BEST VIEWED WITH JAVASCRIPT ENABLED</strong><h1>
+        <h1 style="text-align: center; color: firebrick;"><strong>PLEASE ENABLE JAVASCRIPT AND REFRESH TO CONTINUE</strong><h1>
+
+    </noscript>
+<div class="emptySite">
     <head>
         <style>
 
@@ -72,6 +85,87 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="restaurantStyles.css">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+          function validateForm()
+            {
+                var name = document.forms["contactForm"]["Name"].value;
+                var email = document.forms["contactForm"]["Email"].value;
+                var validPhone = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+                var phone = document.forms["contactForm"]["Phone"].value;
+
+
+                if(name == "")
+                {
+                    alert("Name must be filled out!");
+                    return false;
+                }
+                 if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+                {
+                    
+                }
+                else
+                {
+                    alert("Please enter a valid email!");
+                    return false;
+                }
+    
+                if(phone.match(validPhone))
+                {
+                        
+                }
+                else
+                {
+                        alert("Please enter a valid 10 digit phone number!");
+                        return false;
+                }
+                if(document.getElementById("no").checked == false)
+                {
+                    if(document.getElementById("yes").checked == false)
+                    {
+                         alert("Have you been to the restaurant?");
+                        return false;
+                    }
+                }
+                if(document.getElementById("Monday").checked == false)
+                {
+                    if(document.getElementById("Tuesday").checked == false)
+                    {
+
+                         if(document.getElementById("Wednesday").checked == false)
+                        {
+                            if(document.getElementById("Thursday").checked == false)
+                            {
+                                if(document.getElementById("Friday").checked == false)
+                                {
+                                    alert("Please mark what days we can contact you!");
+                                    return false;
+                                }
+                            }
+                            else
+                            {
+                                alert("Form validation succesful!")
+                                return true;
+                            }
+                        }
+                        else
+                        {
+                            alert("Form validation succesful!")
+                            return true;
+                        }
+                    }
+                    else
+                    {
+                            alert("Form validation succesful!")
+                            return true;
+                    }
+                }
+                else
+                {
+                    alert("Form validation succesful!")
+                    return true;
+                }
+             }
+        </script>
 
         <title>Cobra's Cafe</title>
         <h1 class="Title">Cobra's Cafe</h1>
@@ -86,13 +180,14 @@
     </head>
 
     <body>
+    <form name="contactForm" onsubmit="return validateForm()" method="post">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-offset-4 col-lg-4">
-                     <div class="form-group">
-                         <p id="label">Name: <input type="text" name="Name" class="form-control"></p>
+                        <div class="form-group">
+                            <p id="label">Name: <input type="text" name="Name" class="form-control"></p>
 
-                     </div>
+                        </div>
                 </div>
             </div>
             <div class="row">
@@ -138,10 +233,10 @@
                      <div class="form-group">
                           <label id="label">Have you been to the restaurant?&nbsp&nbsp</label>
                           <label class="radio-inline">
-                              <input  type="radio" name="answer">No
+                              <input  type="radio" name="answer" id="no">No
                             </label> 
                             <label class="radio-inline">
-                              <input  type="radio" name="answer">Yes
+                              <input  type="radio" name="answer" id="yes">Yes
                             </label>                         
 
                      </div>
@@ -150,11 +245,11 @@
             <div class="row">
                 <div class="col-lg-offset-4 col-lg-4">
                      <div class="form-group">
-                          <p id="label">Best days to contact you: &nbsp<input type="checkbox" name="Monday" value="Monday"> M
-                                <input type="checkbox" name="Tuesday" value="Tuesday"> T
-                                <input type="checkbox" name="Wednesday" value="Wednesday"> W
-                                <input type="checkbox" name="Thursday" value="Thursday"> Th
-                                <input type="checkbox" name="Friday" value="Friday"> F  
+                          <p id="label">Best days to contact you: &nbsp<input type="checkbox" name="Monday" value="Monday" id="Monday"> M
+                                <input type="checkbox" name="Tuesday" value="Tuesday" id="Tuesday"> T
+                                <input type="checkbox" name="Wednesday" value="Wednesday" id="Wednesday"> W
+                                <input type="checkbox" name="Thursday" value="Thursday" id="Thursday"> Th
+                                <input type="checkbox" name="Friday" value="Friday" id="Friday"> F  
                             </p>
 
                      </div>
@@ -167,7 +262,7 @@
             </div>
 
         </div>
- 
+ </form>
     <footer class="footer">
          <hr class="footline" />
            <br>
@@ -179,7 +274,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
     </body>
-     
+</div>    
 
 
 
