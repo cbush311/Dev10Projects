@@ -53,102 +53,127 @@
                 text-align: right;
             }
 
-            .layout_table {
-               margin:auto;
-                width: 50%;
-                padding-bottom: 30px;
+            #layout_table {
+               margin-left: auto;
+               margin-right: auto;
+            }
+            #menu_color {
+                background-color: linen;
             }
             tr:nth-child(even){
                 background-color: firebrick;
+                color: linen;
             }
 
             td {
                 padding: 3px;
             }
-
-
-
-
-
         </style>
+         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> 
         <link rel="stylesheet" type="text/css" href="restaurantStyles.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <title>Cobra's Cafe</title>
         <h1 class="Title">Cobra's Cafe</h1>
-        <hr />
-        <a class="pages" href="index.html">Home</a>
-         <a class="pages" href="Menu.html">Menu</a>
-         <a class="pages" href="Contact.html">Contact Us</a>
-         <br>
-         <hr />
+        <ul class="nav nav-tabs">
+             <li><a class="home_page" href="index.html"><i class="fa fa-home home_page" style="font-size:28px;"></i></a></li>
+             <li class="active"><a class="pages" href="Menu.html">Menu</a></li>
+             <li> <a class="pages" href="Contact.html">Contact Us</a></li>
+
+         </ul>
     </head>
 
     <body>
-        <div class="menu">
-            <h1 class="menu">Menu</h1>
-            <div class="layout_left">
-                <h2 class="item_title1">Burger and Fries</h2>
-                <p class="item_des1">An American Classic!<br>Your choice - with or without cheese<br>Pickle, onion, tomato, and lettuce<br>Served with our famous thick cut french fries<br>$7.95</p>
+            <div class="container-fluid" id="menu_color">
+                <h1 class="menu">Menu</h1>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="item_title1">Burger and Fries</h2>
+                        <p class="item_des1">An American Classic!<br>Your choice - with or without cheese<br>Pickle, onion, tomato, and lettuce<br>Served with our famous thick cut french fries<br>$7.95</p>
 
-                <h2 class="item_title1">Tenderloin Sandwich and Chips</h2>
-                <p class="item_des1">Really hits the spot!<br>Plain or sesame seed bun<br>Pickle, onion, tomato, and lettuce<br>Served with our house-made chips<br>$8.95</p>
+                    </div>
+
+                    <div class="col-lg-4">
+                             <h2 class="item_title1">Tenderloin Sandwich and Chips</h2>
+                             <p class="item_des1">Really hits the spot!<br>Plain or sesame seed bun<br>Pickle, onion, tomato, and lettuce<br>Served with our house-made chips<br>$8.95</p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                            <h2 class="item_title1">Hot Dog and Chips</h2>
+                            <p class="item_des1">A Summer classic!<br>Your choice - white or whear bun, relish<br>mustard, and ketchup<br>Served with our house-made chips<br>$7.95</p>
+                  
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <h2 class="item_title1">House Salad</h2>
+                        <p class="item_des1">On the lighter side<br>Your choice - with or without cheese<br>Iceberg lettuce, tomatoes, peppers<br>Thousand Island or ranch dressing<br>Served with a dinner roll<br>$6.95</p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h2 class="item_title1">Italian Sausage and Peppers</h2>
+                        <p class="item_des1">An all-time favorite!<br>Your choice - mild or spicy Cole Slaw<br>Served with garlic mashers<br>$10.95</p>
+
+                    </div>
+
+                     <div class="col-lg-4">
+                         <h2 class="item_title1">Brisket Sandwich and Fries</h2>
+                        <p class="item_des1">A taste of Texas!<br>Smoked brisket on thick-cut Texas Toast<br>Cole Slaw<br>Serverd with our famous thick-cut french fries<br>$7.95</p>
+
+
+                    </div>      
+                </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                         <table class="t01" id="layout_table">
+                            <h2 class="item_title1">Beverages</h2>
+                                <tr>
+                                    <td class="beverages">Root Beer</td>
+                                    <td class="price">$3.00</td>
+                                    
+                                </tr>
+                                 <tr>
+                                    <td class="beverages"">Coke</td>
+                                    <td class="price">$3.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages"">Bottled Water</td> 
+                                    <td class="price">$1.25</td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages"">Lemonade</td>
+                                    <td class="price">$1.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages"">Iced Tea</td>
+                                    <td class="price">$1.25</td>
+                                </tr>
+                            
+                        </table>
+                    </div>
+                 </div>
             </div>
 
-            <div class="layout_right">
-                <h2 class="item_title1">Hot Dog and Chips</h2>
-                <p class="item_des1">A Summer classic!<br>Your choice - white or whear bun, relish<br>mustard, and ketchup<br>Served with our house-made chips<br>$7.95</p>
-       
-                <h2 class="item_title1">House Salad</h2>
-                <p class="item_des1">On the lighter side<br>Your choice - with or without cheese<br>Iceberg lettuce, tomatoes, peppers<br>Thousand Island or ranch dressing<br>Served with a dinner roll<br>$6.95</p>
-                
-            </div>
-   
-            <div class="flex-container">
-                <h2 class="item_title1">Italian Sausage and Peppers</h2>
-                <p class="item_des1">An all-time favorite!<br>Your choice - mild or spicy Cole Slaw<br>Served with garlic mashers<br>$10.95</p>
-                <br>
-                <h2 class="item_title1">Brisket Sandwich and Fries</h2>
-                <p class="item_des1">A taste of Texas!<br>Smoked brisket on thick-cut Texas Toast<br>Cole Slaw<br>Serverd with our famous thick-cut french fries<br>$7.95</p>
-                <table class="t01">
-                        <caption><strong>Beverages</strong></caption>
-                            <tr>
-                                <td class="beverages">Root Beer</td>
-                                <td class="price">$3.00</td>
-                                
-                            </tr>
-                            <tr>
-                                <td class="beverages"">Bottled Water</td> 
-                                <td class="price">$1.25</td>
-                            </tr>
-                            <tr>
-                                <td class="beverages"">Lemonade</td>
-                                <td class="price">$1.00</td>
-                            </tr>
-                            <tr>
-                                <td class="beverages"">Iced Tea</td>
-                                <td class="price">$1.25</td>
-                            </tr>
-                </table>
-                <br>
-            </div>
-        </div>
-      
+         <footer class="footer">
+                <div class="wrapper">
+                    <hr class="footline" />
+                    <br>
+                    <address>31197 March Dr, Plano, TX, 75025</address>
+                    <p>972.555.6556</p>
+                </div>
+     </footer>
         
-
+                 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </body>
+
      
-     <div class="footer">
-          <hr class="footline" />
-           <br>
-         <address>31197 March Dr, Plano, TX, 75025</address>
-         <p>972.555.6556</p>
-
-     </div>
-
-
-
-
-
-
-
 </html>

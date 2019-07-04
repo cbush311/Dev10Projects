@@ -5,13 +5,31 @@
 
 .pages {
     text-decoration: underline;
-    color: blue;
+    color: black;
     float: left;
-    width: 100px;
+    width: 150px;
+    text-align: center;
+}
+
+.home_page {
+    color: black;
+    float: left;
+    width: 150px;
+    text-align: center;
+
+}
+
+.home_page:visited {
+    color: firebrick;
+
+}
+
+.home_page:hover {
+    font-weight: bold;
 }
 
 .footline {
-    position: fixed;
+    position: relative;
   left: 0;
   bottom: 10;
   width: 100%;
@@ -19,7 +37,7 @@
 }
 
 .footer {
-    position: fixed;
+position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -36,5 +54,6 @@
  .pages:active {
      text-decoration: none;
  }
+
 
 
