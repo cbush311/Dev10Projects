@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <noscript>
+        <style type="text/css">
+            .emptySite
+            {
+                display: none;
+            }
+
+        </style>
+        <h1 style="text-align: center; color: firebrick; "><strong>THIS SITE IS BEST VIEWED WITH JAVASCRIPT ENABLED</strong><h1>
+        <h1 style="text-align: center; color: firebrick;"><strong>PLEASE ENABLE JAVASCRIPT AND REFRESH TO CONTINUE</strong><h1>
+
+    </noscript>
+<div class="emptySite">
+    <head>
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <title>Lucky Sevens</title>
+        <script>
+
+            var counter = 1;
+            var highestCounter = 1;
+            var currentBank = 0;
+            var maxBank = 0;
+            var start_bet = 0;
+            function showResults()
+            {
+                document.getElementById('results').style.display = "block";
+            }
+            function rollDice()
+            {
+                dice = Math.floor((Math.random() * 6) + 1);
+                return dice;
+            }
+
+            function playGame()
+            {
+                counter = 1;
+                highestCounter = 1;
+                currentBank = 0;
+                maxBank = 0;
+                start_bet = 0;
+                if(document.getElementById("bet").value.charAt(0) == '$')
+                {
+                    document.getElementById("bet").value = document.getElementById("bet").value.substr(1);
+                }
+                start_bet = parseFloat(document.getElementById("bet").value);
+                if(document.getElementById("bet").value == "")
+                {
+                    alert("You Must Enter a Bet!");
+                    false;
+                }
+                if(parseFloat(document.getElementById("bet").value) <= 0)
+                {
+                    alert("Bet must be above $0.00");
+
+                }
+                currentBank = start_bet;
+                console.log(currentBank);
+                maxBank = currentBank;
+                while(currentBank > 0)
+                {
+                    var die1 = rollDice();
+                    var die2 = rollDice();
+                    var turn = die1 + die2;
+                    if(turn == 7)
+                    {
+                        currentBank = currentBank + 4;
+                        if(currentBank > maxBank)
+                        {
+                            maxBank = currentBank;
+                            highestCounter = counter;
+                        }
+
+                    }
+                    else
+                    {
+                        currentBank = currentBank - 1;
+                        if(currentBank > maxBank)
+                        {
+                            maxBank = currentBank;
+                            highestCounter = counter; 
+                        }
+
+                    }
+                    counter++;
+
+                }
+
+                console.log(maxBank);
+                console.log(highestCounter);
+                console.log(counter);
+                 showResults();
+                display_bet.innerHTML= start_bet;
+                display_counter.innerHTML= counter;
+                display_maxBank.innerHTML= maxBank;
+                display_highestCounter.innerHTML= highestCounter;
+                return false;
+               
+
+            }
+            
+
+
+
+        </script>
+
+        
+        <style>
+            #layout_table {
+               margin-left: auto;
+               margin-right: auto;
+            }
+            tr:nth-child(even){
+                background-color: linen;
+                color: firebrick;
+            }
+             tr:nth-child(odd){
+                color: linen;
+            }
+
+            td {
+                padding: 3px;
+            }
+
+
+        </style>
+
+
+    </head>
+
+    <body style="background-color: black;">
+        <div class="container-fluid" style="text-align: center; background-color: firebrick; padding-top: 10px;" >
+            <div class="row">
+                <div class="col-lg-12" style="margin-left: auto; margin-right: auto; color: linen;">
+                    <h1>LUCKY SEVENS</h1>
+                
+                </div>
+            </div>
+            <form name="contactForm"  method="post" autocomplete="off">
+                <div class="row">
+                    <div class="col-lg-offset-4 col-lg-4">
+                        <div class="form-group">
+                                <p id="label" style="color: linen;">Starting Bet: <input type="text" name="Bet" class="form-control" id="bet" placeholder="$0.00"></p>
+
+                            </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-offset-4 col-lg-4" style="height: 100px;">
+                        <button type="submit" class="btn btn-default"  onclick="return playGame()" onsubmit="return false">Play</button>
+                    </div>
+                </div>
+                <div class="row" id="results" style="display: none; color: linen;">
+                    <div class="col-lg-12">
+                         <table style="border: 5px solid gray;" id="layout_table">
+                            <h2 class="item_title1">Results</h2>
+                                <tr>
+                                    <td class="beverages">Starting Bet:</td>
+                                    <td class="price"><label>$</label><span id ="display_bet"></td>
+                                    
+                                </tr>
+                                 <tr>
+                                    <td class="beverages"">Total Rolls Before Going Broke:</td>
+                                    <td class="price"><span id ="display_counter"></td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages"">Highest Amount Won:</td> 
+                                    <td class="price"><label>$</label><span id = "display_maxBank"></td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages"">Roll Count At Highest Won:</td>
+                                    <td class="price"><span id ="display_highestCounter"></td>
+                                </tr>
+                                <tr>
+                                    <td class="beverages">Play Again!</td>
+                                    <td class="price">:)</td>
+
+                                
+                                </tr>
+                            
+                        </table>
+                    </div>
+            </form>
+
+
+
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</html>
