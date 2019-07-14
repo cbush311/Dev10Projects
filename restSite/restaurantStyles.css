@@ -1,6 +1,6 @@
 .Title {
     text-align: center;
-    font-family: Verdana;
+    font-family: Impact;
 }
 
 .pages {
@@ -42,6 +42,7 @@ position: relative;
   bottom: 0;
   width: 100%;
   text-align: center;
+  font-style: italic;
 }
  .pages:visited {
      color: firebrick;
@@ -49,6 +50,7 @@ position: relative;
 
  .pages:hover {
      font-weight: bold;
+     text-decoration: underline;
  }
 
  .pages:active {
